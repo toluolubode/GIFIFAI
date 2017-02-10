@@ -33,7 +33,8 @@ function visionbase64() {
 function take_snapshot() {
     Webcam.snap(function (data_uri) {
         document.getElementById('my_result').innerHTML = '<img src="' + data_uri + '"/>';
-        b64 = JSON.stringify(data_uri.replace('data:image/jpeg;base64,', ""));
+        b64 = data_uri.replace('data:image/jpeg;base64,', "");
+        console.log(b64);
         visionbase64()
         return b64
 
@@ -68,12 +69,10 @@ function take_snapshot() {
 //}
 
 function giphy() {
-    var query = vision();
-    console.log(query);
-    q = "happy cat"; // search query
+    //    q = "happy cat"; // search query
 
     request = new XMLHttpRequest;
-    request.open('GET', 'https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=' + q, true);
+    request.open('GET', 'https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=' + query, true);
 
     request.onload = function () {
         if (request.status >= 200 && request.status < 400) {
