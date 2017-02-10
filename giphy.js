@@ -19,8 +19,11 @@ function visionbase64() {
         function (response) {
             let d = response["rawData"]["outputs"][0]["data"]["concepts"];
             console.log(d);
-            query = JSON.stringify(d[0]["name"]);
-            console.log(query.replace(/['"]+/g, ''));
+            query = d[0]["name"];
+            finalquery = "q=" + query + "+cat"
+            console.log(query);
+            console.log(finalquery);
+            //            console.log(query.replace(/['"]+/g, ''));
         },
         function (err) {
             alert("FUCK MEEEMEMEMEME");
@@ -47,13 +50,16 @@ function giphy() {
     //        q = "happy cat"; // search query
 
     request = new XMLHttpRequest;
-    request.open('GET', 'https://api.giphy.com/v1/gifs/search?' + query + 'api_key=dc6zaTOxFJmzC&tag=', true);
+    request.open('GET', 'http://api.giphy.com/v1/gifs/search?' + finalquery + '&api_key=dc6zaTOxFJmzC');
 
     request.onload = function () {
         if (request.status >= 200 && request.status < 400) {
-            data = JSON.parse(request.responseText).data.image_url;
-            console.log(data);
-            document.getElementById("giphyme").innerHTML = '<center><img src = "' + data + '"  title="GIF via Giphy"></center>';
+            var p1 = JSON.parse(request.responseText);
+            link = p1.data[1];
+            console.log(link);
+            giflink = link.url.replace(/['"]+/g, '');
+            console.log(giflink)
+            document.getElementById("giphyme").innerHTML = '<center><img src = "' + giflink + '"  title="GIF via Giphy"></center>';
         } else {
             console.log('reached giphy, but API returned an error');
         }
