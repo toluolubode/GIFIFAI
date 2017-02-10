@@ -1,7 +1,7 @@
 // WebcamJS v1.0.19
 // Webcam library for capturing JPEG/PNG images in JavaScript
 // Attempts getUserMedia, falls back to Flash
-// Author: Joseph Huckaby: http://github.com/jhuckaby
+// Author: Joseph Huckaby
 // Based on JPEGCam: http://code.google.com/p/jpegcam/
 // Copyright (c) 2012 - 2017 Joseph Huckaby
 // Licensed under the MIT License
@@ -644,6 +644,7 @@
                 var img = new Image();
                 img.onload = func;
                 img.src = 'data:image/' + this.params.image_format + ';base64,' + raw_data;
+
             }
 
             return null;
