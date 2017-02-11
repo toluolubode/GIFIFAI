@@ -11,6 +11,63 @@ function visionbase64() {
         'EFu10OAenQzUcWbL421g6akTv03qKpP1LY-nXTCW',
         '8uFy-k4onXl3U_pszMJufXKCu4Q3lw3HWqu5cY1E'
     );
+
+    //TRAIN MY CALRIFAI MODEL BABY!!
+//    app.inputs.create([
+//            //PUT TRAINING IMAGES HERE
+//        {
+//            url: "https://samples.clarifai.com/metro-north.jpg"
+//            },
+//        {
+//            url: "https://samples.clarifai.com/wedding.jpg"
+//            }
+//           concepts: [
+//            {
+//                id: "happy",
+//                value: true
+//          }
+//        ]
+//      ]).then(
+//        function (response) {
+//            // do something with response
+//        },
+//        function (err) {
+//            // there was an error
+//        }
+//    );
+    //GENERATE A MODEL
+    //    app.models.create(
+    //        "emotion", [
+    //            {
+    //                "id": "happy"
+    //            },
+    //            {
+    //                "id": "sad"
+    //            },
+    //            {
+    //                "id": "anger"
+    //            },
+    //            {
+    //                "id": "fear"
+    //            }
+    //    ]
+    //    ).then(
+    //        function (response) {
+    //            // do something with response
+    //        },
+    //        function (err) {
+    //            // there was an error
+    //        }
+    //    );
+    //TRAIN THE MODEL
+    //    app.models.train("{model_id}").then(
+    //        function (response) {
+    //            // do something with response
+    //        },
+    //        function (err) {
+    //            // there was an error
+    //        }
+    //    );
     var query;
 
     app.models.predict(Clarifai.GENERAL_MODEL, {
@@ -33,6 +90,9 @@ function visionbase64() {
 
 }
 
+
+
+
 function take_snapshot() {
     Webcam.snap(function (data_uri) {
         document.getElementById('my_result').innerHTML = '<img src="' + data_uri + '"/>';
@@ -44,6 +104,10 @@ function take_snapshot() {
     });
     console.log(b64);
 }
+
+
+
+
 
 
 function giphy() {
@@ -59,6 +123,7 @@ function giphy() {
             console.log(link);
             giflink = link.url.replace(/['"]+/g, '');
             console.log(giflink)
+            alert(giflink);
             document.getElementById("giphyme").innerHTML = '<center><img src = "' + giflink + '"  title="GIF via Giphy"></center>';
         } else {
             console.log('reached giphy, but API returned an error');
