@@ -13,28 +13,28 @@ function visionbase64() {
     );
 
     //TRAIN MY CALRIFAI MODEL BABY!!
-//    app.inputs.create([
-//            //PUT TRAINING IMAGES HERE
-//        {
-//            url: "https://samples.clarifai.com/metro-north.jpg"
-//            },
-//        {
-//            url: "https://samples.clarifai.com/wedding.jpg"
-//            }
-//           concepts: [
-//            {
-//                id: "happy",
-//                value: true
-//          }
-//        ]
-//      ]).then(
-//        function (response) {
-//            // do something with response
-//        },
-//        function (err) {
-//            // there was an error
-//        }
-//    );
+    //    app.inputs.create([
+    //            //PUT TRAINING IMAGES HERE
+    //        {
+    //            url: "https://samples.clarifai.com/metro-north.jpg"
+    //            },
+    //        {
+    //            url: "https://samples.clarifai.com/wedding.jpg"
+    //            }
+    //           concepts: [
+    //            {
+    //                id: "happy",
+    //                value: true
+    //          }
+    //        ]
+    //      ]).then(
+    //        function (response) {
+    //            // do something with response
+    //        },
+    //        function (err) {
+    //            // there was an error
+    //        }
+    //    );
     //GENERATE A MODEL
     //    app.models.create(
     //        "emotion", [
@@ -83,7 +83,7 @@ function visionbase64() {
             //            console.log(query.replace(/['"]+/g, ''));
         },
         function (err) {
-            alert("FUCK MEEEMEMEMEME");
+            alert("dammmmnnnn");
             console.log(err);
         }
     );
@@ -121,12 +121,12 @@ function giphy() {
             var p1 = JSON.parse(request.responseText);
             link = p1.data[1];
             console.log(link);
-            giflink = link.url.replace(/['"]+/g, '');
+            giflink = link.images.downsized.url.replace(/['"]+/g, '');
             console.log(giflink)
             alert(giflink);
             document.getElementById("giphyme").innerHTML = '<center><img src = "' + giflink + '"  title="GIF via Giphy"></center>';
         } else {
-            console.log('reached giphy, but API returned an error');
+            console.log('OH NO WE COULD NOT GIF YOU');
         }
     };
 
