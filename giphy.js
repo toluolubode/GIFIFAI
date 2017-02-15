@@ -58,7 +58,7 @@ function giphy() {
     //        q = "happy cat"; // search query
 
     request = new XMLHttpRequest;
-    request.open('GET', 'http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=' + finalquery);
+    request.open('GET', 'https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=' + finalquery);
 
 
     request.onload = function () {
