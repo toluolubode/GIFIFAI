@@ -1,0 +1,17 @@
+{
+    "manifest_version": 2,
+
+    "name": "Emotion Cat",
+    "description": "This extension gives you cute cat gifs based on your emotions",
+    "version": "1.0",
+
+    "browser_action": {
+        "default_icon": "icon.png",
+        "default_popup": "popup.html"
+    },
+    "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'",
+    "permissions": [
+    "activeTab",
+    "https://ajax.googleapis.com/"
+  ]
+}

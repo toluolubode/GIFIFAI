@@ -22,9 +22,18 @@ function visionbase64() {
             query = d[0]["name"];
             finalquery = "q=" + query + "+cat"
             console.log(query);
-            console.log(finalquery);
+            //            console.log(finalquery);
             console.log(query.replace(/['"]+/g, ''));
-            alert("Hey don't be " + query + ". Click on the GIF ME button and get a CAT GIF")
+            if (query == "Happy") {
+                alert("Awesome! Be " + query + ". Click on the GIF ME button and spread your happiness to all the sad cats.");
+                finalquery = "q=Sad+cat"
+
+            } else {
+                alert("Hey don't be " + query + ". Click on the GIF ME button and get a Happy cat gif to cheer you up");
+                finalquery = "q=Happy+cat"
+
+            }
+
         },
         function (err) {
             alert("FUCK MEEEMEMEMEMEM");
@@ -58,13 +67,17 @@ function giphy() {
     //        q = "happy cat"; // search query
 
     request = new XMLHttpRequest;
-    request.open('GET', 'https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=' + finalquery);
+    request.open('GET', 'http://api.giphy.com/v1/gifs/search?' + finalquery + '&api_key=dc6zaTOxFJmzC&limit=100&rating=pg');
 
 
     request.onload = function () {
         if (request.status >= 200 && request.status < 400) {
             var p1 = JSON.parse(request.responseText);
-            link = p1.data.fixed_height_downsampled_url;
+            console.log(p1);
+            num = Math.floor(Math.random() * 100) + 0
+            console.log(num);
+            link = p1.data[num].images.original.url;
+            //            link = p1.data.fixed_height_downsampled_url;
             console.log(link);
             document.getElementById("giphyme").innerHTML = '<center><img src = "' + link + '"  title="GIF via Giphy"></center>';
         } else {
