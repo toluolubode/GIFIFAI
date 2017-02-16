@@ -36,7 +36,7 @@ function visionbase64() {
                     showLoaderOnConfirm: true,
                 }, function () {
                     request = new XMLHttpRequest;
-                    request.open('GET', 'http://api.giphy.com/v1/gifs/search?' + finalquery + '&api_key=dc6zaTOxFJmzC&limit=100&rating=pg');
+                    request.open('GET', 'https://api.giphy.com/v1/gifs/search?' + finalquery + '&api_key=dc6zaTOxFJmzC&limit=100&rating=pg');
 
 
                     request.onload = function () {
@@ -76,7 +76,7 @@ function visionbase64() {
                     showLoaderOnConfirm: true,
                 }, function () {
                     request = new XMLHttpRequest;
-                    request.open('GET', 'http://api.giphy.com/v1/gifs/search?' + finalquery + '&api_key=dc6zaTOxFJmzC&limit=100&rating=pg');
+                    request.open('GET', 'https://api.giphy.com/v1/gifs/search?' + finalquery + '&api_key=dc6zaTOxFJmzC&limit=100&rating=pg');
 
 
                     request.onload = function () {
