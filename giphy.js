@@ -1,4 +1,4 @@
-$('#gifbutton').on('click', giphy)
+//$('#gifbutton').on('click', giphy)
 var query;
 
 var b64;
@@ -25,12 +25,87 @@ function visionbase64() {
             //            console.log(finalquery);
             console.log(query.replace(/['"]+/g, ''));
             if (query == "Happy") {
-                alert("Awesome! Be " + query + ". Click on the GIF ME button and spread your happiness to all the sad cats.");
+                //                swal("Awesome! Be " + query + ". Click on the GIF ME button and spread your happiness to all the sad cats.");
                 finalquery = "q=Sad+cat"
+                swal({
+                    title: "Awesome! Be " + query + ".",
+                    text: "Click on the GIF ME button and spread your happiness to all the sad cats.",
+                    type: "success",
+                    showCancelButton: true,
+                    closeOnConfirm: false,
+                    showLoaderOnConfirm: true,
+                }, function () {
+                    request = new XMLHttpRequest;
+                    request.open('GET', 'http://api.giphy.com/v1/gifs/search?' + finalquery + '&api_key=dc6zaTOxFJmzC&limit=100&rating=pg');
+
+
+                    request.onload = function () {
+                        if (request.status >= 200 && request.status < 400) {
+                            var p1 = JSON.parse(request.responseText);
+                            console.log(p1);
+                            num = Math.floor(Math.random() * 100) + 0
+                            console.log(num);
+                            link = p1.data[num].images.original.url;
+                            //            link = p1.data.fixed_height_downsampled_url;
+                            console.log(link);
+                            document.getElementById("giphyme").innerHTML = '<center><img src = "' + link + '"  title="GIF via Giphy"></center>';
+                        } else {
+                            console.log('OH NO WE COULD NOT GIF YOU');
+                        }
+                    };
+
+                    request.onerror = function () {
+                        console.log('connection error');
+                    };
+
+                    request.send();
+                    setTimeout(function () {
+                        swal("Here's a cat gif");
+                    }, 2000);
+                });
+
 
             } else {
-                alert("Hey don't be " + query + ". Click on the GIF ME button and get a Happy cat gif to cheer you up");
                 finalquery = "q=Happy+cat"
+                swal({
+                    title: "Hey don't be " + query + ".",
+                    text: "We got a happy cat gif to cheer you right up",
+                    type: "success",
+                    showCancelButton: true,
+                    closeOnConfirm: false,
+                    showLoaderOnConfirm: true,
+                }, function () {
+                    request = new XMLHttpRequest;
+                    request.open('GET', 'http://api.giphy.com/v1/gifs/search?' + finalquery + '&api_key=dc6zaTOxFJmzC&limit=100&rating=pg');
+
+
+                    request.onload = function () {
+                        if (request.status >= 200 && request.status < 400) {
+                            var p1 = JSON.parse(request.responseText);
+                            console.log(p1);
+                            num = Math.floor(Math.random() * 100) + 0
+                            console.log(num);
+                            link = p1.data[num].images.original.url;
+                            //            link = p1.data.fixed_height_downsampled_url;
+                            console.log(link);
+                            document.getElementById("giphyme").innerHTML = '<center><img src = "' + link + '"  title="GIF via Giphy"></center>';
+                        } else {
+                            console.log('OH NO WE COULD NOT GIF YOU');
+                        }
+                    };
+
+                    request.onerror = function () {
+                        console.log('connection error');
+                    };
+
+                    request.send();
+                    setTimeout(function () {
+                        swal("Here's a cat gif");
+                    }, 200);
+                });
+
+                //                swal("Hey don't be " + query + ".", "Click on the GIF ME button and get a Happy cat gif to cheer you up");
+
 
             }
 
@@ -42,6 +117,7 @@ function visionbase64() {
     );
 
 }
+
 
 
 
@@ -63,31 +139,31 @@ function take_snapshot() {
 
 
 
-function giphy() {
-    //        q = "happy cat"; // search query
-
-    request = new XMLHttpRequest;
-    request.open('GET', 'http://api.giphy.com/v1/gifs/search?' + finalquery + '&api_key=dc6zaTOxFJmzC&limit=100&rating=pg');
-
-
-    request.onload = function () {
-        if (request.status >= 200 && request.status < 400) {
-            var p1 = JSON.parse(request.responseText);
-            console.log(p1);
-            num = Math.floor(Math.random() * 100) + 0
-            console.log(num);
-            link = p1.data[num].images.original.url;
-            //            link = p1.data.fixed_height_downsampled_url;
-            console.log(link);
-            document.getElementById("giphyme").innerHTML = '<center><img src = "' + link + '"  title="GIF via Giphy"></center>';
-        } else {
-            console.log('OH NO WE COULD NOT GIF YOU');
-        }
-    };
-
-    request.onerror = function () {
-        console.log('connection error');
-    };
-
-    request.send();
-};
+//function giphy() {
+//    //        q = "happy cat"; // search query
+//
+//    request = new XMLHttpRequest;
+//    request.open('GET', 'http://api.giphy.com/v1/gifs/search?' + finalquery + '&api_key=dc6zaTOxFJmzC&limit=100&rating=pg');
+//
+//
+//    request.onload = function () {
+//        if (request.status >= 200 && request.status < 400) {
+//            var p1 = JSON.parse(request.responseText);
+//            console.log(p1);
+//            num = Math.floor(Math.random() * 100) + 0
+//            console.log(num);
+//            link = p1.data[num].images.original.url;
+//            //            link = p1.data.fixed_height_downsampled_url;
+//            console.log(link);
+//            document.getElementById("giphyme").innerHTML = '<center><img src = "' + link + '"  title="GIF via Giphy"></center>';
+//        } else {
+//            console.log('OH NO WE COULD NOT GIF YOU');
+//        }
+//    };
+//
+//    request.onerror = function () {
+//        console.log('connection error');
+//    };
+//
+//    request.send();
+//};
