@@ -104,7 +104,7 @@ function visionbase64() {
                     }, 200);
                 });
 
-                //                swal("Hey don't be " + query + ".", "Click on the GIF ME button and get a Happy cat gif to cheer you up");
+                //                swal("It looks like you're " + query + ".", "Click on the GIF ME button and get a Happy cat gif to cheer you up");
 
 
             }
