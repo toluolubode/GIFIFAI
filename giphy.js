@@ -68,8 +68,8 @@ function visionbase64() {
             } else {
                 finalquery = "q=Happy+cat"
                 swal({
-                    title: "Hey don't be " + query + ".",
-                    text: "We got a happy cat gif to cheer you right up",
+                    title: "It look's like you are " + query + ".",
+                    text: "I think what can cheer your right up. Click on the GIF me button",
                     type: "success",
                     showCancelButton: true,
                     closeOnConfirm: false,
