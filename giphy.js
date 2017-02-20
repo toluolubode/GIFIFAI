@@ -69,7 +69,7 @@ function visionbase64() {
                 finalquery = "q=Happy+cat"
                 swal({
                     title: "It look's like you are " + query + ".",
-                    text: "I think what can cheer your right up. Click on the GIF me button",
+                    text: "I think I know what can cheer your right up. Click on the GIF me button to find out",
                     type: "success",
                     showCancelButton: true,
                     closeOnConfirm: false,
@@ -100,7 +100,7 @@ function visionbase64() {
 
                     request.send();
                     setTimeout(function () {
-                        swal("Here's a cat gif");
+                        swal("A CAT GIF!");
                     }, 200);
                 });
 
