@@ -37,9 +37,9 @@ function visionbase64() {
             //            console.log(d);
             query = d[0]["name"];
             finalquery = "q=" + query + "+" + animal;
-            console.log(query);
-            console.log(finalquery);
-            console.log(query.replace(/['"]+/g, ''));
+//            console.log(query);
+//            console.log(finalquery);
+//            console.log(query.replace(/['"]+/g, ''));
             if (query == "Happy") {
                 //                swal("Awesome! Be " + query + ". Click on the GIF ME button and spread your happiness to all the sad cats."); 
                 finalquery = "q= Sad+" + animal
@@ -64,7 +64,7 @@ function visionbase64() {
                             console.log(num);
                             link = p1.data[num].images.original.url;
                             //            link = p1.data.fixed_height_downsampled_url;
-                            console.log(link);
+//                            console.log(link);
                             document.getElementById("giphyme").innerHTML = '<center><img src = "' + link + '"  title="GIF via Giphy"></center>';
                         } else {
                             console.log('OH NO WE COULD NOT GIF YOU');
