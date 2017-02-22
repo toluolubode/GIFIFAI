@@ -10,6 +10,7 @@ $(document).ready(function () {
         switch ($(this).val()) {
         case 'cat':
             swal("Cats! nice choice", "They're pretty aren't they?");
+            animal = "cat";
             break;
         case 'dog':
             swal("Puppers! nice choice", "They're pretty aren't they?");
@@ -45,7 +46,7 @@ function visionbase64() {
                 finalquery = "q= Sad+" + animal
                 swal({
                     title: "Awesome! Be " + query + ".",
-                    text: "Click on the GIF ME button and spread your happiness to all the sad cats.",
+                    text: "Click on the GIF ME button and spread your happiness to all the sad " + animal,
                     type: "success",
                     showCancelButton: true,
                     closeOnConfirm: false,
@@ -117,7 +118,7 @@ function visionbase64() {
 
                     request.send();
                     setTimeout(function () {
-                        swal("A CAT GIF!");
+                        swal("A " + animal + " GIF!");
                     }, 200);
                 });
 
