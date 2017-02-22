@@ -117,7 +117,7 @@ function visionbase64() {
 
                     request.send();
                     setTimeout(function () {
-                        swal("Here's a cat gif");
+                        swal("A CAT GIF!");
                     }, 200);
                 });
 
