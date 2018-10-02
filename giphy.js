@@ -52,7 +52,7 @@ function visionbase64() {
                     showLoaderOnConfirm: true,
                 }, () => {
                     request = new XMLHttpRequest;
-                    request.open('GET', `https://api.giphy.com/v1/gifs/search?${finalquery}&api_key=dc6zaTOxFJmzC&limit=100&rating=pg`);
+                    request.open('GET', `https://api.giphy.com/v1/gifs/search?${finalquery}&api_key=e6DfifuWHvd3jiQOUL6Tb3VCryAccEh1&limit=100&rating=pg`);
                     console.log(request);
 
 
