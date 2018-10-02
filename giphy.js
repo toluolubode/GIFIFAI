@@ -23,8 +23,7 @@ $(document).ready(() => {
 function visionbase64() {
     // instantiate a new Clarifai app passing in your clientId and clientSecret
     const app = new Clarifai.App(
-        '3LT42ODvLUE8dxSL8z2LU34EXV4A7rPZvT2yrDRr',
-        'ElxV_fQJeQaZiebwbeK8ifjr55dTE8ja459m2795'
+        {apiKey: 'ba53f399d4ef4dd3ae8a8e09a75d7ef9'}
     );
 
     let query;
@@ -42,7 +41,7 @@ function visionbase64() {
             //            console.log(finalquery);
             //            console.log(query.replace(/['"]+/g, ''));
             if (query == "Happy") {
-                //                swal("Awesome! Be " + query + ". Click on the GIF ME button and spread your happiness to all the sad cats."); 
+                //                swal("Awesome! Be " + query + ". Click on the GIF ME button and spread your happiness to all the sad cats.");
                 finalquery = `q= Sad+${animal}`
                 swal({
                     title: `Awesome! Be ${query}.`,
@@ -129,7 +128,7 @@ function visionbase64() {
 
         },
         err => {
-            alert("FUCK MEEEMEMEMEMEM");
+            alert("Not working");
 
         }
     );
